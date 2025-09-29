@@ -1,22 +1,7 @@
-# ignore all except c files
-*
-
-!*.c
-
-!*/
-
-!*.h
-
-!*.bmp
-
-!.wav
-
-!card.raw
-
-!answers.txt
 
 /practice/
-
+.vscode
+*.exe
 
 !.gitignore
 

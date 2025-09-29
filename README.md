@@ -1,8 +1,9 @@
+
 # 💻 CS50: Introduction to Computer Science | My Solutions
 
 This repository contains my personal solutions to the problem sets from **Harvard's CS50** course. Each program is written in **C**, thoughtfully structured, cleanly commented, and progressively improved as I deepen my understanding.
 
-> ✅ **Completed:** Week 0 - Week 3
+> ✅ **Completed:** Week 0 – Week 5
 > 🔄 Ongoing refinement as I continue through the course
 
 ---
@@ -40,6 +41,22 @@ week3/
 ├── runoff.c               # Runoff voting with elimination rounds
 ```
 
+### Week 4 – Memory
+
+```
+week4/
+├── filter.c               # Image filter (grayscale, sepia, blur, edges)
+├── recover.c              # Forensic image recovery from raw memory card
+```
+
+### Week 5 – Data Structures
+
+```
+week5/
+├── dictionary.c           # Implements a hash table for spell-checking
+├── speller.c              # Spell-check program using dictionary
+```
+
 ---
 
 ## 🧠 Topics Covered
@@ -51,6 +68,8 @@ week3/
 * ✅ Text analysis & readability scoring
 * ✅ Voting systems: Plurality, Runoff, Tideman
 * ✅ Structs, scoring logic, memory management
+* ✅ Working with images and raw memory
+* ✅ Hash tables, linked lists, and spell-checking
 * ✅ Interactive CLI programs and game logic
 
 ---

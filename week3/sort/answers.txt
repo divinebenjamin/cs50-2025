@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: on sorted list it performs faster than sort3 - omega(n)
+
+sort2 uses: Merge Sort
+
+How do you know?: on all case it is the fastest - theta(n log n)
+
+sort3 uses: Selection Sort
+
+How do you know?: it has the slower time on sorted list compared to sort1 - omega(n^2)

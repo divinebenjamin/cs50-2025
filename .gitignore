@@ -1,0 +1,8 @@
+
+/practice/
+.vscode
+*.exe
+week7/movies/movies.db
+
+!.gitignore
+

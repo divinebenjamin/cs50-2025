@@ -1,0 +1,2 @@
+-- List the titles of the five highest rated movies (in order) that Chadwick Boseman starred in, starting with the highest rated.
+SELECT M.title FROM movies M JOIN stars S ON M.id = S.movie_id JOIN people P ON S.person_id = P.id JOIN ratings R ON M.id = R.movie_id WHERE P.name = 'Chadwick Boseman' ORDER BY R.rating DESC LIMIT 5;

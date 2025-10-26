@@ -140,9 +140,34 @@ WHERE id IN
 
 -- Check flights that left ealier the next day
 SELECT * FROM flights 
-WHERE day = 29 AND month = 7 AND hour <= 12;
+WHERE day = 29 AND month = 7;
+-- 18|8|6|2024|7|29|16|0
+-- 23|8|11|2024|7|29|12|15
+-- 36|8|4|2024|7|29|8|20
+-- 43|8|1|2024|7|29|9|30
+-- 53|8|9|2024|7|29|15|20
 
--- check the passport_numbers for the suspects that and accomplice that left earlier the next day
+-- Earliest flight left around 8:20
+
+-- Check for the suspect that left in the earliest flight
 SELECT name FROM people
 WHERE passport_number IN 
-  (3391710505, 3592750733, 5773159633) ;
+  (SELECT passport_number from passengers
+  WHERE flight_id IN
+    (SELECT id FROM flights 
+    WHERE day = 29 AND month = 7 AND hour = 8)
+  AND passport_number IN 
+    (3391710505, 3592750733, 5773159633));
+-- Bruce left is the only suspect that left on the earliest flight
+
+-- Bruce is theif and he called Robin so he is his accomplice 
+
+
+-- Check the flight destination
+SELECT * FROM airports
+WHERE id IN 
+  (SELECT destination_airport_id FROM flights 
+  WHERE day = 29 AND month = 7 AND hour = 8);
+-- 4|LGA|LaGuardia Airport|New York City
+
+-- Bruce went to New York City

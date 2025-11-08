@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                 <p id="hint1"></p>
+                 <div>
+                    <button class="option">6 people per 1 sheep</button>
+                    <button class="option">3 people per 1 sheep</button>
+                    <button class="option">1 people per 1 sheep</button>
+                    <button class="option">1 people per 3 sheep</button>
+                    <button class="option">1 people per 6 sheep</button>
+                 </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                 <p id="hint2"></p>
+                 <div>
+                    <input id="response" type="text">
+                    <button id="confirm">Check Answer</button>
+                 </div>
+            </div>
+        </div>
+
+
+        <script>
+            // TODO: Add code to check answers to questions
+            const answerData = ['3 people per 1 sheep', 'switzerland' ];
+
+            const options1 = document.querySelectorAll('.option');
+            const hint1 = document.getElementById('hint1')
+
+            // PART 1
+            options1.forEach(option => {
+                option.addEventListener('click', () => {
+                    const choice = option.textContent
+
+                    if (choice === answerData[0]){
+                        const timeoutID = setTimeout(() => {
+                            option.style.backgroundColor = 'green';
+                            hint1.textContent = 'Correct';
+                        }, 0)
+
+                    } else {
+                        const timeoutID = setTimeout(() => {
+                            option.style.backgroundColor = 'red'
+                            hint1.textContent = 'Incorrect';
+                            setTimeout(() => {
+                                option.style.backgroundColor = '#d9edff';
+                                hint1.textContent = '';
+                                clearTimeout(timeoutID);
+                            }, 1000);
+                        }, 0)
+                    }
+                });
+            });
+
+
+            // PART 2
+            const responseEl = document.getElementById('response');
+            const confirmBtn = document.getElementById('confirm');
+            const hint2 = document.getElementById('hint2');
+
+            confirmBtn.addEventListener('click', () => {
+                const responseValue = responseEl.value.trim().toLowerCase();
+
+                if (responseValue === answerData[1]){
+                        const timeoutID = setTimeout(() => {
+                            responseEl.style.backgroundColor = 'green';
+                            hint2.textContent = 'Correct';
+                        }, 0)
+
+                    } else {
+                        const timeoutID = setTimeout(() => {
+                            responseEl.style.backgroundColor = 'red'
+                            hint2.textContent = 'Incorrect';
+                            setTimeout(() => {
+                                responseEl.style.backgroundColor = '#d9edff';
+                                hint2.textContent = '';
+                                clearTimeout(timeoutID);
+                            }, 1000);
+                        }, 0)
+                    }
+            })
+        </script>
+    </body>
+</html>
